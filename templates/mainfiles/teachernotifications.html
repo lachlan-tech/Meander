@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <html>
+	<head>
+		<title>Meander Suite</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='mainfiles/teachernotifications.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+        <section class="navbar">
+            <a href="{{ url_for('index')}}"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
+            <div class="dropdown">
+                <button class="dropbtn">For Students
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('studentnotificationsdesc')}}">Timetable And Room Change Notifications</a>
+                    <a href="{{ url_for('studentplannerdesc')}}">Student Planner</a>
+                    <a href="{{ url_for('teacherfinderdesc')}}">Teacher Finder</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">For Teachers
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('trafficlightsystemdesc')}}">Traffic Light Behaviors</a>
+                    <a href="{{ url_for('teachernotificationsdesc')}}">Notifications of student class changes</a>
+                    <a href="{{ url_for('teacherfinderdesc')}}">Teacher Finder</a>
+                </div>
+            </div>
+            <a href="{{ url_for('login')}}", style="float: right;">log In</a>
+            <div class="dropdown", style="float: right;">
+                <button class="dropbtn">Register
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('studentcontentpackdesc')}}">Individual Student</a>
+                    <a href="{{ url_for('teachercontentpackdesc')}}">Teachers special</a>
+                    <a href="{{ url_for('duluxepackdesc')}}">Whole school</a>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            
+        </section>
+    </body>
+</html>

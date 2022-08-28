@@ -1,0 +1,18 @@
+using rapidapis
+Total Requests Allowed Per Month: 1000000
+usr: lniel51@outlook.com
+pass: 
+--------
+1,000,000 call limit per month
+
+44,640 calls a month if you did minutely calls in a private database, you can get around the hard limit. and multiple schools can have the app, with no increase in demand off the api
+
+--
+far less than if 1500 people called on the website 40 times a day, including reloads, for 31 days in a month
+1500*40*31 = 1,860,000 (breaks the bank) costs $4 to upgrade to get that kind of service 
+multiply that by the 1000s of schools that could use it... yeh no
+--
+
+MYSQL
+User: root
+Pass: Hole_1234

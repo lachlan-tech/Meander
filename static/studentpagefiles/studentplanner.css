@@ -1,0 +1,107 @@
+/* html css */
+html{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+*{
+	overflow: auto;
+}
+
+
+
+/* body css */
+body{
+	margin: 0;
+	width: 100%;
+	font-family: Arial;
+	height: 100%;
+}
+
+
+
+/* Navbar css */
+#trafficimg{
+	height: 5.5vh;
+	width: auto;
+	display: inline-block;
+	padding: 0.5vh;
+}
+
+#logo{
+	height: 3vh;
+	width: auto;
+}
+
+
+.navbar {
+	overflow: hidden;
+	background-color: rgb(51, 51, 51);
+	font-family: Arial;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 6.5vh;
+}
+.navbar a {
+	float: left;
+	font-size: 2vh;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	padding: 2vh 3vh;
+	text-decoration: none;
+}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; 
+	margin: 0; 
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: rgb(128, 128, 128);
+}
+.dropdown-content {
+	display: none;
+	position: fixed;
+	background-color: rgb(249, 249, 249);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+.dropdown-content a {
+	float: none;
+	color: rgb(0, 0, 0);
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.dropdown-content a:hover {
+	background-color: rgb(221, 221, 221);
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+
+
+.title{
+    text-align: center;
+    font-family: Times;
+	font-size: 2vw;
+}
+.paragraph{
+	text-align: center;
+    font-family: Times, serif;
+	font-size: 2vw;		
+}
+

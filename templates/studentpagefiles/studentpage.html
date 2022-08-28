@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <html>
+	<head>
+		<title>Meander Suite</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='studentpagefiles/studentpage.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+        <script>
+            function alertweather()
+            {
+                alert("Average Tempurature: {{val1}}°C \n Average Humidity: {{val2}}% \n Cloud Coverage: {{val3}}% \n Moon Cycle: {{val4}}%");
+            }
+        </script>
+	</head>
+	<body>
+        <section class="navbar">
+            <a href="#"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
+            <a href="{{ url_for('studentnotifications')}}">Your Timetable</a>
+            <a href="{{ url_for('studentplanner')}}">Student Planner</a>
+            <a href="{{ url_for('page2')}}">Teacher Finder</a>
+            <a href="{{ url_for('studentpage')}}", style="float: right;">StudentHub</a>
+            <span style="float: right;", onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
+        </section>
+        <div class="parallax1">
+            <img id="welcome" src="{{ url_for('static', filename='mainfiles/logoblack.png')}}">
+        </div>
+        <div class="welcomebar">
+            <div class="welcometitle">
+                <h1>Welcome To the Meander Suite</h1>
+                <hr>
+            </div>
+            <div class="motto">
+                <h2><i>"Through persistance, planning, and problem solving... We can change the world"</i></h2>
+            </div>
+            <br><br>
+        </div>
+        <div class="pitch">
+            <br><br>
+            <div class="title">
+                <h2>Welcome the answer to all your problems</h2>
+                <hr>
+                <br>
+            </div> 
+            
+            <div class="paragraph">
+                <p>
+                    AllSchools is the backbone of any healthy student school relationship. With our many projects, from planners and notifications systems for students, to AI powered Behavior inferences, and whole systems for schools that cover everything from roomchanges, to student classroom changes, making everything a breeze! So what are you waiting for? Register today!
+                </p>
+                <p>
+                    To be eligible for some of our projects, your school must be a registered member of AllSchools, if you are unsure wheather your school is registered, you can search the list of registered schools below.
+                </p>
+            </div>
+            <div class="form">
+                <form method="POST">
+                    <i class="fa-solid fa-magnifying-glass"></i><input name="name", style="height:30px;width:500px;", placeholder="Search the name of your school">
+                    <input type="submit", style="height:35px;width:60px;", placeholder="SEARCH">
+                </form>
+            </div>
+            <div class="paragraph">
+                <p>
+                    Not Registered? That's Ok, You can select the register button in the menu bar and get registered today! Please be aware that the register option is for <b>schools only</b>, Please consider talking to your Administration staff about getting registered. However all hope is not lost! You can browse our amazing selection of Student projects! By Signing up for those projects seperatly you help to support AllSchools in the best possible way, Thank you for your Support!
+                </p>
+            </div>
+        </div>
+        <div class="aboutus">
+            <div class="title">
+                <h2>About us: The Founding Idea</h2>
+                <hr>
+                <br>
+            </div>
+            
+            <div class="paragraph">
+                <p>
+                    AllSchools was created and founded by Woodridge State High School Student, Lachlan Nielsen, as a compilation of many programs he had written for his own school. After quickly realising the usefullness of his soulutions, he found that these projects could help make a difference in other schools, aswell as his own. 
+                </p>
+            </div>
+            <div class="quote">
+                <div class="imgdiv">
+                    <div>
+                        <img id="img", src="{{ url_for('static', filename='mainfiles/image2.png')}}">
+                    </div>
+                </div>
+                <div id="quote", class="paragraph">
+                    <i style="float: left;", class="fa-solid fa-quote-left"></i>
+                    <p>
+                        As any Scholar will know, the keys to success are preparedness, willingness, and empowerment. The projects I created aim to help students and teachers be more prepared for their day, and help to increase the coherent nature that all students require from a school to be able to learn in an ideal environment. By making students aware of changes happening in their day, we can help to increase the overall preparedness of students and teachers, boosting their success. Remember, knowledge is power! The more you know the better prepared you are for this new 21st century world.
+                    </p>
+                    <i style="float: right;", class="fa-solid fa-quote-right"></i>
+                </div>
+            </div>
+            
+            <div class="paragraph">
+                <p>
+                    As a team we need to make sure that we are all prepared for this new and exciting 21st centuary world that we live in. The demand for technology as a solution to modern problems is only becoming more and more pressing. Here at AllSchools, there is a commitment to making the challenging lives of our favorite teachers, besties, classmates, and support staff easier. Because we are all struggling in this world... So why not help eachother out? Be Stronger today!
+                </p>
+            </div>
+            </div>
+            <br><br><br>
+        </div>
+        <section class="footer">
+            <div class="title">
+                <h2>CONTACT US</h2>
+            </div>
+            <div class="contacts">
+                <div class="contact"><p>PHONE: (07) 3290 7222</p></div>
+                <div class="contact"><p>FAX: (07) 3290 7200</p></div>
+                <div class="contact"><p>EMAIL: emailoffice@woodridgeshs.eq.edu.au</p></div>
+            </div>            
+        </section>
+    </body>
+</html>

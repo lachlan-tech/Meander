@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AllSchools</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='teacherfinderfiles/answer.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+        <section class="navbar">
+            <a href="{{ url_for('studentnotifications')}}">Your Timetable</a>
+            <a href="{{ url_for('studentplanner')}}">Student Planner</a>
+            <a href="{{ url_for('page2')}}">Teacher Finder</a>
+            <a href="{{ url_for('studentpage')}}", style="float: right;">StudentHub</a>
+        </section>
+        <div class="form">
+            <div class="title" >
+                <h1>TEACHER FINDER</h1>
+            </div>
+            <div class="answer">
+                <h2> Your Teacher Is {{value1}}</h2>
+                <form>
+                    <input id="finish" type="button" value="Finish" onclick="history.back()">
+                </form>
+            </div>    
+        </div>
+	</body>
+</html>

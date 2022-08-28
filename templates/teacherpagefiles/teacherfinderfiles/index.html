@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<html>
+	<head>
+		<title>Meander Suite</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='teacherfinderfiles/index.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+        <script>
+            function alertweather()
+            {
+                alert("Average Tempurature: {{val1}}°C \n Average Humidity: {{val2}}% \n Cloud Coverage: {{val3}}% \n Moon Cycle: {{val4}}%");
+            }
+        </script>
+	</head>
+	<body>
+        <section class="navbar">
+            <a href="#"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
+            <a href="{{ url_for('teachernotifications')}}">Your Timetable</a>
+            <a href="{{ url_for('teacherplanner')}}">Planner</a>
+            <a href="{{ url_for('page1')}}">Teacher finder</a>
+            <a href="{{ url_for('teacherpage')}}", style="float: right;">TeacherHub</a>
+            <span style="float: right;", onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
+        </section>
+        <section class="content">
+            <div class="title">
+                <h1>TEACHER FINDER</h1>
+            </div>
+            <div class="paragraph">
+                <div class="form">
+                    <p>WELCOME TO THE TEACHER FINDER, ENTER A TEACHERS SURNAME WITHOUT MISS, MRS, OR MR AND HIT SEARCH TO FIND YOUR CLASS<p>
+                    <p>PLEASE NOTE - THE SEARCH IS CASE SENSITIVE SO REMEMBER YOUR CAPITAL LETTERS FOR THE START OF A TEACHERS NAME</p>
+                    <form method="POST">
+                        <i class="fa-solid fa-magnifying-glass" id="magglass"></i> <input id="searchbar" name="name", placeholder="Who do you want to find?">
+                    </form>
+                </div>
+        </section>
+    </body>
+</html>
