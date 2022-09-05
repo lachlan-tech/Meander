@@ -29,18 +29,18 @@ import mysql.connector as mysql
 # ______________________________________________________________________________________________________________________________________________________________
 # Database Connection
 # ______________________________________________________________________________________________________________________________________________________________
-db = mysql.connect(host = "localhost",user = "root",passwd = "Hole_1234",database = "allschools")
-print(db)
+#db = mysql.connect(host = "localhost",user = "root",passwd = "Hole_1234",database = "allschools")
+#print(db)
 
 
-get_times = ["13 : 45", "13 : 46", "13 : 47",]
+#get_times = ["13 : 45", "13 : 46", "13 : 47",]
 
-cursor = db.cursor()
-query = "INSERT INTO users (name, accesscode) VALUES (%s, %s)"
-values = ("Hafeez", "hafeez")
-cursor.execute(query, values)
-db.commit()
-print(cursor.execute("SELECT * FROM users"))
+#cursor = db.cursor()
+#query = "INSERT INTO users (name, accesscode) VALUES (%s, %s)"
+#values = ("Hafeez", "hafeez")
+#cursor.execute(query, values)
+#db.commit()
+#print(cursor.execute("SELECT * FROM users"))
 
 password1 = "+isi"
 password2 = "uocrx"
