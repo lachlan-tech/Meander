@@ -3,14 +3,25 @@
     <html>
 	<head>
 		<title>Meander Suite</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='teacherpagefiles/teacherpage.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='mainfiles/index.css')}}">
         <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
 	</head>
 	<body>
-        <section class="navbar">
-            <a href="{{ url_for('index')}}"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
+        <div class="topnav" id="myTopnav">
+            <a href="{{ url_for('index')}}", class="active"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
+            <a href="#contact">Contact</a>
             <div class="dropdown">
                 <button class="dropbtn">For Students</button>
                 <div class="dropdown-content">
@@ -36,7 +47,9 @@
                     <a href="{{ url_for('duluxepackdesc')}}">Whole school</a>
                 </div>
             </div>
-        </section>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
         <div class="parallax1">
             <img id="welcome" src="{{ url_for('static', filename='mainfiles/logoblack.png')}}">
         </div>

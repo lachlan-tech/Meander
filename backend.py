@@ -38,7 +38,6 @@ cursor = db.cursor()
 def findateacher():
     #setting date and time (redifine these to make it a permanant situation)
     search = request.form["name"]
-    print(search)
     lastname = search
     date = "28/01/2021" #strftime("%d/%m/%Y")
     hour = strftime("%H")
@@ -47,8 +46,6 @@ def findateacher():
         hour = "8"
     if hour == "09":
         hour = "9"
-    print(hour)
-    print(minute)
     # m1 (for later in the program)
     m1 = strftime("%M")
     period = ""
