@@ -29,25 +29,8 @@ import mysql.connector as mysql
 # ______________________________________________________________________________________________________________________________________________________________
 # Database Connection
 # ______________________________________________________________________________________________________________________________________________________________
-#db = mysql.connect(host = "localhost",user = "root",passwd = "Hole_1234",database = "allschools")
-#print(db)
-
-
-#get_times = ["13 : 45", "13 : 46", "13 : 47",]
-
-#cursor = db.cursor()
-#query = "INSERT INTO users (name, accesscode) VALUES (%s, %s)"
-#values = ("Hafeez", "hafeez")
-#cursor.execute(query, values)
-#db.commit()
-#print(cursor.execute("SELECT * FROM users"))
-
-password1 = "+isi"
-password2 = "uocrx"
-password3 = "q'uks"
-username1 = 'user'
-
-
+db = mysql.connect(host = "meander.cp7w8rn9hrdf.us-west-1.rds.amazonaws.com",port="3306",user = "admin",password = "meander.1",)
+cursor = db.cursor()
 # ______________________________________________________________________________________________________________________________________________________________
 # Import and call Point 
 # ______________________________________________________________________________________________________________________________________________________________
@@ -121,15 +104,19 @@ def Security():
                     newchar = chars[int(i-4)]
                     encryptedpass.append(newchar)
     password = ''.join(encryptedpass)
-    if username == username1:
-        if password == password1:    
-            return redirect(url_for('studentpage'))
-        if password == password2:
-            return redirect(url_for('adminpage'))
-        if password == password3:
-            return redirect(url_for('teacherpage'))
-        # If incorrect stay on the password page
-        return render_template("mainfiles/login.html")
+    sql = "SELECT * FROM `Meander-secure`.userdata WHERE user = %s AND password = %s"
+    u = (username, password)
+    cursor.execute(sql, u)
+    myresult = cursor.fetchall()
+    if myresult[0][3] == "1":    
+        return redirect(url_for('studentpage'))
+    if myresult[0][3] == "2":
+        return redirect(url_for('teacherpage'))
+    if myresult[0][3] == "3":
+        return redirect(url_for('adminpage'))
+        
+    # If incorrect stay on the password page
+    return render_template("mainfiles/login.html")
 
 # ______________________________________________________________________________________________________________________________________________________________
 # Code for the traffic lights program
