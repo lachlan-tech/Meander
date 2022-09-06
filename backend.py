@@ -156,27 +156,27 @@ def TrafficLights(pg):
     moon = data2["moon_illumination"]
 
     #rank tempurature 
-    if temp >= 23 and temp <= 28:
+    if temp >= 16 and temp <= 35:
         rank += 1
-    if temp >= 29 and temp <= 34:
+    if temp >= 36 and temp <= 44:
         rank += 2
-    if temp >= 11 and temp <= 22:
+    if temp >= 6 and temp <= 15:
         rank += 2
-    if temp >= 35:
+    if temp >= 45:
         rank += 3
-    if temp <= 10:
+    if temp <= 5:
         rank += 3
 
     #rank humidity
-    if humidity >= 40 and humidity <= 60:
+    if humidity >= 20 and humidity <= 80:
         rank += 1
-    if humidity >= 16 and humidity <= 39:
+    if humidity >= 6 and humidity <= 19:
         rank += 2
-    if humidity >= 61 and humidity <= 79:
+    if humidity >= 81 and humidity <= 94:
         rank += 2
-    if humidity >= 0 and humidity <= 15:
+    if humidity >= 0 and humidity <= 5:
         rank += 3
-    if humidity >= 80 and humidity <= 100:
+    if humidity >= 95 and humidity <= 100:
         rank += 3
 
     #rank cloud percentage

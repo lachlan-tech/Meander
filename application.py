@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # This Program is for frameworking the allschools website, it glues the peices together and runs from a single line of code
-# In the terminal enter the following run code: python framework.py
+# In the terminal enter the following run code: python application.py
 #
 # CODE COMMENTING
 # (# ______________________________________________________________________________________________________________________________________________________________)
@@ -316,18 +316,9 @@ def adminpage():
 
 
 
-
-
-
-
-
-
-
-
-
 # ______________________________________________________________________________________________________________________________________________________________
-# Run the app
+# Run the app, comment out for wsgi. uncomment for local testing
 # ______________________________________________________________________________________________________________________________________________________________
 
-#if __name__ == '__main__':
-#    app.run()
+if __name__ == '__main__':
+    app.run()
