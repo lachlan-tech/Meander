@@ -125,7 +125,7 @@ def password_check():
 
 @app.route('/teacherhub')
 def teacherpage():
-    return TrafficLights("teacherpagefiles/teacherpage.html")
+    return render_template("teacherpagefiles/teacherpage.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
 # ------------------------------------------------------------
 # The following code is for the TeacherHub's Timetable change Notification extension

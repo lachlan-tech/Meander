@@ -119,25 +119,14 @@ def Security():
 # Code for the traffic lights program
 # ______________________________________________________________________________________________________________________________________________________________
 
-def TrafficLights(pg):
+def TrafficLights():
     rank = 0
-    url = "https://weatherapi-com.p.rapidapi.com/current.json"
-    querystring = {"q":"Brisbane"}
-    headers = {"X-RapidAPI-Key": "574c319c1bmshbd3b1d2aceffbc4p148f2bjsn618e60f3d821", "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"}
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    data1raw = response.json()
-    data1 = data1raw["current"]
-    url = "https://weatherapi-com.p.rapidapi.com/astronomy.json"
-    querystring = {"q":"Brisbane"}
-    headers = {"X-RapidAPI-Key": "574c319c1bmshbd3b1d2aceffbc4p148f2bjsn618e60f3d821","X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"}
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    data2raw1 = response.json()
-    data2raw2 = data2raw1["astronomy"]
-    data2 = data2raw2["astro"]
-    temp = data1["temp_c"]
-    humidity = data1["humidity"]
-    cloud = data1["cloud"]
-    moon = data2["moon_illumination"]
+    cursor.execute("SELECT * FROM `Meander-secure`.weather")
+    myresult = cursor.fetchall()
+    temp = float(myresult[0][1])
+    humidity = int(myresult[0][2])
+    cloud = int(myresult[0][3])
+    moon = int(myresult[0][4])
 
     #rank tempurature 
     if temp >= 16 and temp <= 35:
@@ -191,10 +180,14 @@ def TrafficLights(pg):
     
     # send out data based on rankings
     if rank >= 20: #rank BLACK
-        return render_template(pg, val5=url_for('static', filename='teacherpagefiles/traffic-light-black.png'), val1=temp, val2=humidity, val3=cloud, val4=moon)
+        vals = [temp, humidity, cloud, moon, url_for('static', filename='teacherpagefiles/traffic-light-black.png')]
+        return vals 
     if rank >= 15 and rank <= 19: #rank RED
-        return render_template(pg, val5=url_for('static', filename='teacherpagefiles/traffic-light-red.png'), val1=temp, val2=humidity, val3=cloud, val4=moon)
+        vals = [temp, humidity, cloud, moon, url_for('static', filename='teacherpagefiles/traffic-light-red.png')]
+        return vals 
     if rank >= 10 and rank <= 14: #rank YELLOW
-        return render_template(pg, val5=url_for('static', filename='teacherpagefiles/traffic-light-yellow.png'), val1=temp, val2=humidity, val3=cloud, val4=moon)
+        vals = [temp, humidity, cloud, moon, url_for('static', filename='teacherpagefiles/traffic-light-yellow.png')]
+        return vals 
     if rank >= 4 and rank <= 9: #rank GREEN
-        return render_template(pg, val5=url_for('static', filename='teacherpagefiles/traffic-light-green.png'), val1=temp, val2=humidity, val3=cloud, val4=moon)
+        vals = [temp, humidity, cloud, moon, url_for('static', filename='teacherpagefiles/traffic-light-green.png')]
+        return vals 
