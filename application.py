@@ -137,7 +137,7 @@ def teacherpage():
 
 @app.route('/teacherhub/timetablechanges')
 def teachernotifications():
-    return render_template("teacherpagefiles/teachertimetable.html")
+    return render_template("teacherpagefiles/teachertimetable.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
 
 # ------------------------------------------------------------
@@ -150,20 +150,8 @@ def teachernotifications():
 
 @app.route('/teacherhub/planner')
 def teacherplanner():
-    return render_template("teacherpagefiles/teacherplanner.html")
+    return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
-
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Traffic light extension
-# ------------------------------------------------------------
-
-# XXXXXXXXXX
-# The backend code for this extension can be found in the backend.py file
-# XXXXXXXXXX
-
-@app.route('/teacherhub/trafficlights')
-def trafficlights():
-    return TrafficLights()
 # ------------------------------------------------------------
 # The following code is for the TeacherHub's Teacher finder extension
 # ------------------------------------------------------------
@@ -174,11 +162,11 @@ def trafficlights():
 
 @app.route('/teacherhub/teacherfinder')
 def page1():
-    return render_template("teacherpagefiles/teacherfinderfiles/index.html")
+    return render_template("teacherpagefiles/teacherfinderfiles/index.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 # Setting up the backend
 @app.route('/teacherhub/teacherfinder', methods=["POST"])
 def search1():
-    return render_template("teacherpagefiles/teacherfinderfiles/answer.html", value1=findateacher())
+    return render_template("teacherpagefiles/teacherfinderfiles/answer.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4], value1=findateacher())
 
 # ------------------------------------------------------------
 # The following code is for the TeacherHub's Traffic light extension
@@ -190,7 +178,7 @@ def search1():
 
 @app.route('/teacherhub/pb4lpointsys')
 def pb4lpointsys():
-    return render_template("teacherpagefiles/teacherplanner.html")
+    return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
 # ------------------------------------------------------------
 # The following code is for the TeacherHub's Traffic light extension
@@ -202,7 +190,7 @@ def pb4lpointsys():
 
 @app.route('/teacherhub/qcaatracker')
 def qcaatracker():
-    return render_template("teacherpagefiles/qcaatracker.html")
+    return render_template("teacherpagefiles/qcaatracker.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
 
 
@@ -219,7 +207,7 @@ def qcaatracker():
 
 @app.route('/studenthub')
 def studentpage():
-    return TrafficLights("studentpagefiles/studentpage.html")
+    return render_template("studentpagefiles/studentpage.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 
 # ------------------------------------------------------------
 # The following code is for the StudentHub's Timetable change Notification extension
