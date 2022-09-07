@@ -27,4 +27,5 @@ while True:
     sql = "INSERT INTO `Meander-secure`.weather VALUES (%s, %s, %s, %s, %s);"
     cursor.execute(sql, (1,temp,humidity,cloud,moon))
     db.commit()
-    time.sleep(3600)
+    print("weather updated", temp,humidity,cloud,moon)
+    time.sleep(300)
