@@ -49,22 +49,7 @@
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
         <section class="content">
-            <h2>Login Page</h2><br>    
-            <div class="login">    
-                <form method="POST">       
-                    <label><b>Enter Your Schools Access Code To Continue</b></label>
-                    <br><br><br><br>
-                    <p>School Access code:</p>  
-                    <input type="Password" name="Uname" id="Uname" placeholder="Access Code">
-                    <br><br><br><br>
-                    <p>Student Password (Your Password):</p>
-                    <input type="Password" name="Pass" id="Pass" placeholder="Student Password">    
-                    <br><br><br><br>
-                    <p>Passwords on AllSchools are confidential. If you have forgotten your password or school access code please contact your system administrator, or the administration building at your school, to talk about getting the passwords and access codes for your school. We apologise for any inconveinence.</p>    
-                    <br><br>
-                    <input type="submit" name="log" id="log" value="Continue">         
-                </form> 
-            </div>   
+            <img id="logo", src="{{ url_for('static', filename='mainfiles/coming-soon-page.jpg')}}" style="width:100%; height:auto;">
         </section>
     </body>
 </html>
