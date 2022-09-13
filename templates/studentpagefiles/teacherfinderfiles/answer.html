@@ -6,14 +6,31 @@
         <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+            function alertweather()
+            {
+                alert("Average Tempurature: {{val1}}°C \n Average Humidity: {{val2}}% \n Cloud Coverage: {{val3}}% \n Moon Cycle: {{val4}}%");
+            }
+        </script>
 	</head>
 	<body>
-        <section class="navbar">
+        <div class="topnav" id="myTopnav">
+            <a href="#"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
             <a href="{{ url_for('studentnotifications')}}">Your Timetable</a>
             <a href="{{ url_for('studentplanner')}}">Student Planner</a>
             <a href="{{ url_for('page2')}}">Teacher Finder</a>
             <a href="{{ url_for('studentpage')}}", style="float: right;">StudentHub</a>
-        </section>
+            <span style="float: right;", onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
         <div class="form">
             <div class="title" >
                 <h1>TEACHER FINDER</h1>
