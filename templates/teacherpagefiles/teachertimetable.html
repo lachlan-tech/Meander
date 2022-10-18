@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<html>
-	<head>
-		<title>Meander Suite</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='teacherpagefiles/teachertimetable.css')}}">
-        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
-            }
-            function alertweather()
-            {
-                alert("Average Tempurature: {{val1}}°C \n Average Humidity: {{val2}}% \n Cloud Coverage: {{val3}}% \n Moon Cycle: {{val4}}%");
-            }
-        </script>
-    </head>
-    <body>
-        <div class="topnav" id="myTopnav">
-            <a href="#"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
-            <a href="{{ url_for('teachernotifications')}}">Your Timetable</a>
-            <a href="{{ url_for('teacherplanner')}}">Planner</a>
-            <a href="{{ url_for('page1')}}">Teacher Finder</a>
-            <a href="{{ url_for('qcaatracker')}}">Student QCAA tracker</a>
-            <a href="{{ url_for('pb4lpointsys')}}">PB4L Class Points</a>
-            <a href="{{ url_for('teacherpage')}}", style="float: right;">TeacherHub</a>
-            <img style="float: right;", onclick="alertweather()", class="tooltip" id="trafficimg" src={{val5}}>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-        <img id="logo", src="{{ url_for('static', filename='mainfiles/coming-soon-page.jpg')}}" style="width:100%; height:auto;">
-    </body>
-</html>
+{% extends "teacherpagefiles/teacherlayout.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='teacherpagefiles/teachertimetable.css')}}">
+{% endblock style %}
+{% block content %}
+    <img id="logo", src="{{ url_for('static', filename='mainfiles/coming-soon-page.jpg')}}" style="width:100%; height:auto;">   
+{% endblock content %}
         

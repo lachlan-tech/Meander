@@ -1,0 +1,18 @@
+{% extends "teacherpagefiles/teacherlayout.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='teacherfinderfiles/index.css')}}">
+{% endblock style %}
+{% block content %}
+<div class="title">
+    <h1>TEACHER FINDER</h1>
+</div>
+<div class="paragraph">
+    <div class="form">
+        <p>WELCOME TO THE TEACHER FINDER, ENTER A TEACHERS SURNAME WITHOUT MISS, MRS, OR MR AND HIT SEARCH TO FIND YOUR CLASS<p>
+        <p>PLEASE NOTE - THE SEARCH IS CASE SENSITIVE SO REMEMBER YOUR CAPITAL LETTERS FOR THE START OF A TEACHERS NAME</p>
+        <form method="POST">
+            <i class="fa-solid fa-magnifying-glass" id="magglass"></i> <input id="searchbar" name="name", placeholder="Who do you want to find?">
+        </form>
+    </div>
+</div>
+{% endblock content %}

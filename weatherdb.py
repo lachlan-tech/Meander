@@ -33,4 +33,5 @@ while True:
     #log that the data has been updated 
     print("weather updated", temp,humidity,cloud,moon)
     #wait 5 minutes before re logging
+    db.disconnect()
     time.sleep(300)

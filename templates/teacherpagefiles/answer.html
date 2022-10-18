@@ -1,0 +1,17 @@
+{% extends "teacherpagefiles/teacherlayout.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='teacherfinderfiles/answer.css')}}">
+{% endblock style %}
+{% block content %}
+<div class="form">
+    <div class="title" >
+        <h1>TEACHER FINDER</h1>
+    </div>
+    <div class="answer">
+        <h2> Your Teacher Is {{value1}}</h2>
+        <form>
+            <input id="finish" type="button" value="Finish" onclick="history.back()">
+        </form>
+    </div>    
+</div> 
+{% endblock content %}

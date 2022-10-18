@@ -1,98 +1,52 @@
-<!DOCTYPE html>
-<html>
-    <html>
-	<head>
-		<title>Meander Suite</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='mainfiles/index.css')}}">
-        <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
-            }
-        </script>
-	</head>
-	<body>
-        <div class="topnav" id="myTopnav">
-            <a href="{{ url_for('index')}}", class="active"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
-            <div class="dropdown">
-                <button class="dropbtn">For Students</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('studentnotificationsdesc')}}">Timetable And Room Change Notifications</a>
-                    <a href="{{ url_for('studentplannerdesc')}}">Student Planner</a>
-                    <a href="{{ url_for('teacherfinderdesc')}}">Teacher Finder</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">For Teachers</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('trafficlightsystemdesc')}}">Traffic Light Behaviors</a>
-                    <a href="{{ url_for('teachernotificationsdesc')}}">Notifications of student class changes</a>
-                    <a href="{{ url_for('teacherfinderdesc')}}">Teacher Finder</a>
-                </div>
-            </div>
-            <a href="{{ url_for('login')}}", style="float: right;">log In</a>
-            <div class="dropdown", style="float: right;">
-                <button class="dropbtn">Register</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('studentcontentpackdesc')}}">Individual Student</a>
-                    <a href="{{ url_for('teachercontentpackdesc')}}">Teachers special</a>
-                    <a href="{{ url_for('duluxepackdesc')}}">Whole school</a>
-                </div>
-            </div>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-        <div class="parallax1">
-            <img id="welcome" src="{{ url_for('static', filename='mainfiles/logoblack.png')}}">
-        </div>
-        <div class="welcomebar">
-            <div class="welcometitle">
-                <h1>Welcome To the Meander Suite</h1>
-                <hr>
-            </div>
-            <div class="motto">
-                <h2><i>"Through persistance, planning, and problem solving... We can change the world"</i></h2>
-            </div>
-            <br><br><br><br>
-        </div>
-        <div class="aboutus">
-            <div class="title">
-                <h2>About us</h2>
-                <hr>
-                <br>
-            </div>
-            <div class="paragraph">
-                <p>
-                    Meander Suite was created and founded by Woodridge State High School Student, Lachlan Nielsen, as a compilation of many programs he had written for his own school. After quickly realising the usefullness of his soulutions, he found that these projects could help make a difference in other schools, aswell as his own. 
-                </p>
-            </div>
-            <div class="quote">
-                <div class="imgdiv">
-                    <div>
-                        <img id="img", src="{{ url_for('static', filename='mainfiles/image2.png')}}">
-                    </div>
-                </div>
-                <div id="quote", class="paragraph">
-                    <i style="float: left;", class="fa-solid fa-quote-left"></i>
-                    <p>
-                        As any Scholar will know, the keys to success are preparedness, willingness, and empowerment. The projects I created aim to help students and teachers be more prepared for their day, and help to increase the coherent nature that all students require from a school to be able to learn in an ideal environment. By making students aware of changes happening in their day, we can help to increase the overall preparedness of students and teachers, boosting their success. Remember, knowledge is power! The more you know the better prepared you are for this new 21st century world.
-                    </p>
-                    <i style="float: right;", class="fa-solid fa-quote-right"></i>
-                </div>
-            </div>
-            
-            <div class="paragraph">
-                <p>
-                    As a team we need to make sure that we are all prepared for this new and exciting 21st centuary world that we live in. The demand for technology as a solution to modern problems is only becoming more and more pressing. Here at Meander Suite, there is a commitment to making the challenging lives of our favorite teachers, besties, classmates, and support staff easier. Because we are all struggling in this world... So why not help eachother out? Be Stronger today!
-                </p>
-            </div>
+{% extends "mainfiles/mainlayout.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='mainfiles/index.css')}}">
+{% endblock style %}
+{% block content %}
+<div class="parallax1">
+    <img id="welcome" src="{{ url_for('static', filename='mainfiles/logoblack.png')}}">
+</div>
+<div class="welcomebar">
+    <div class="welcometitle">
+        <h1>Welcome To the Meander Suite</h1>
+        <hr>
+    </div>
+    <div class="motto">
+        <h2><i>"Through persistance, planning, and problem solving... We can change the world"</i></h2>
+    </div>
+    <br><br><br><br>
+</div>
+<div class="aboutus">
+    <div class="title">
+        <h2>About us</h2>
+        <hr>
+        <br>
+    </div>
+    <div class="paragraph">
+        <p>
+            Meander Suite was created and founded by Woodridge State High School Student, Lachlan Nielsen, as a compilation of many programs he had written for his own school. After quickly realising the usefullness of his soulutions, he found that these projects could help make a difference in other schools, aswell as his own. 
+        </p>
+    </div>
+    <div class="quote">
+        <div class="imgdiv">
+            <div>
+                <img id="img", src="{{ url_for('static', filename='mainfiles/image2.png')}}">
             </div>
         </div>
-    </body>
-</html>
+        <div id="quote", class="paragraph">
+            <i style="float: left;", class="fa-solid fa-quote-left"></i>
+            <p>
+                As any Scholar will know, the keys to success are preparedness, willingness, and empowerment. The projects I created aim to help students and teachers be more prepared for their day, and help to increase the coherent nature that all students require from a school to be able to learn in an ideal environment. By making students aware of changes happening in their day, we can help to increase the overall preparedness of students and teachers, boosting their success. Remember, knowledge is power! The more you know the better prepared you are for this new 21st century world.
+            </p>
+            <i style="float: right;", class="fa-solid fa-quote-right"></i>
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <p>
+            As a team we need to make sure that we are all prepared for this new and exciting 21st centuary world that we live in. The demand for technology as a solution to modern problems is only becoming more and more pressing. Here at Meander Suite, there is a commitment to making the challenging lives of our favorite teachers, besties, classmates, and support staff easier. Because we are all struggling in this world... So why not help eachother out? Be Stronger today!
+        </p>
+    </div>
+    </div>
+</div>   
+{% endblock content %}
