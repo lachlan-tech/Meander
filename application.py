@@ -244,7 +244,7 @@ def TrafficLights():
 @app.route('/teacherhub')
 def teacherpage():
     if "logged_in" in session:
-        if "lvl" in session == 2:
+        if session["lvl"] == 2:
             return render_template("teacherpagefiles/teacherpage.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
@@ -257,7 +257,7 @@ def teacherpage():
 @app.route('/teacherhub/timetablechanges')
 def teachernotifications():
     if "logged_in" in session:
-        if "lvl" in session == 2:
+        if session["lvl"] == 2:
             return render_template("teacherpagefiles/teachertimetable.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
@@ -270,7 +270,7 @@ def teachernotifications():
 @app.route('/teacherhub/planner')
 def teacherplanner():
     if "logged_in" in session:
-        if "lvl" in session == 2:
+        if session["lvl"] == 2:
             return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
@@ -284,7 +284,7 @@ def teacherplanner():
 def page1():
     if request.method == 'POST':
         if "logged_in" in session:
-            if "lvl" in session == 2:
+            if session["lvl"] == 2:
                 return render_template("teacherpagefiles/answer.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4], value1=findateacher())
             else:
                     return redirect(url_for('login'))
@@ -293,7 +293,7 @@ def page1():
 
     else:
         if "logged_in" in session:
-            if "lvl" in session == 2:
+            if session["lvl"] == 2:
                 return render_template("teacherpagefiles/index.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
             else:
                 return redirect(url_for('login'))
@@ -307,7 +307,7 @@ def page1():
 @app.route('/teacherhub/pb4lpointsys')
 def pb4lpointsys():
     if "logged_in" in session:
-        if "lvl" in session == 2:
+        if session["lvl"] == 2:
             return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
@@ -319,7 +319,7 @@ def pb4lpointsys():
 @app.route('/teacherhub/qcaatracker')
 def qcaatracker():
     if "logged_in" in session:
-        if "lvl" in session == 2:
+        if session["lvl"] == 2:
             return render_template("teacherpagefiles/qcaatracker.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
