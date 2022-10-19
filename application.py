@@ -308,7 +308,7 @@ def page1():
 def pb4lpointsys():
     if "logged_in" in session:
         if session["lvl"] == 2:
-            return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+            return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
         else:
             return redirect(url_for('login'))
     else:
@@ -417,5 +417,5 @@ def adminpage():
 # ______________________________________________________________________________________________________________________________________________________________
 # Run the app, comment out for wsgi. uncomment for local testing
 # ______________________________________________________________________________________________________________________________________________________________
-#if __name__ == '__main__':
-#    app.run()
+if __name__ == '__main__':
+    app.run()
