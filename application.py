@@ -306,13 +306,18 @@ def page1():
 # ------------------------------------------------------------
 @app.route('/teacherhub/pb4lpointsys')
 def pb4lpointsys():
-    if "logged_in" in session:
-        if session["lvl"] == 2:
-            return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+    if request.method == 'POST':
+        if "logged_in" in session:
+            if session["lvl"] == 2:
+                return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+            else:
+                return redirect(url_for('login'))
         else:
             return redirect(url_for('login'))
     else:
-        return redirect(url_for('login'))
+        if "logged_in" in session:
+            if session["lvl"] == 2:
+                return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
 # ------------------------------------------------------------
 # The following code is for the TeacherHub's Traffic light extension
 # ------------------------------------------------------------
