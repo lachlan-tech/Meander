@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import com.example.msw.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -84,3 +85,21 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
+fun getStats(){
+    val client = OkHttpClient()
+
+    val request = Request.Builder()
+        .url("https://weatherapi-com.p.rapidapi.com/future.json?q=London&dt=2022-12-25")
+        .get()
+        .addHeader("X-RapidAPI-Key", "574c319c1bmshbd3b1d2aceffbc4p148f2bjsn618e60f3d821")
+        .addHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com")
+        .build()
+
+    val response = client.newCall(request).execute()
+
+}
+fun printData(){
+    print(getStats())
+
+}
+
