@@ -1,25 +1,66 @@
 {% extends "mainfiles/mainlayout.html" %}
 {% block style %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='mainfiles/login.css')}}">
+    <style>
+        .bg-image-vertical {
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: auto 100%;
+        }
+    </style>
 {% endblock style %}
 {% block content %}
-    <h2>Login Page</h2><br>    
-    <div class="login">    
-        <form method="POST">       
-            <label><b>Enter Your Schools Access Code To Continue</b></label>
-            <br><br><br><br>
-            <p>School Access code:</p>  
-            <input type="Password" name="accesscode" id="Uname" placeholder="Access Code">
-            <br><br><br><br>
-            <p>Username:</p>  
-            <input type="Password" name="username" id="Uname" placeholder="Username">
-            <br><br><br><br>
-            <p>Student Password (Your Password):</p>
-            <input type="Password" name="password" id="Pass" placeholder="Student Password">    
-            <br><br><br><br>
-            <p>Passwords on AllSchools are confidential. If you have forgotten your password or school access code please contact your system administrator, or the administration building at your school, to talk about getting the passwords and access codes for your school. We apologise for any inconveinence.</p>    
-            <br><br>
-            <input type="submit" name="log" id="log" value="Continue">         
-        </form> 
-    </div>   
+    <section class="vh-100" style="background-color: #9A616D;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                <img src="{{ url_for('static', filename='mainfiles/bg.jpg')}}" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                            </div>
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+                                    <form method="POST">
+                                        <h3 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Log in</h3>
+                                        
+                                        <p class="small mb-3 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+                                    </form>
+                                    <form>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                            <span class="h1 fw-bold mb-0">Logo</span>
+                                        </div>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                                        <div class="form-outline mb-4">
+                                            <input type="Password" name="accesscode" id="accesscode" class="form-control form-control-lg" />
+                                            <label class="form-label" for="accesscode">Access Code</label>
+                                        </div>
+                                        <div class="form-outline mb-2">
+                                            <input type="text" name="username" id="username" class="form-control form-control-lg" />
+                                            <label class="form-label" for="username">Username</label>
+                                        </div>
+                                        <div class="form-outline mb-2">
+                                            <input type="password" name="password" id="password" class="form-control form-control-lg" />
+                                            <label class="form-label" for="password">Password</label>
+                                        </div>
+                                        <div class="pt-1 mb-3">
+                                            <input class="btn btn-info btn-lg btn-block" type="submit" name="log" id="log" value="Login">
+                                        </div>
+                                        <div class="pt-1 mb-4">
+                                            <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                                        </div>
+                    
+                                        <a class="small text-muted" href="#!">Forgot password?</a>
+                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!" style="color: #393f81;">Register here</a></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}
