@@ -6,9 +6,9 @@
 {% block content %}
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <a type="a" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></a>
+            <a type="a" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></a>
+            <a type="a" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></a>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -21,14 +21,14 @@
                 <img src="{{ url_for('static', filename='mainfiles/news_slider_3.png')}}" class="d-block w-100">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <a class="carousel-control-prev" type="a" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        </a>
+        <a class="carousel-control-next" type="a" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-        </button>
+        </a>
     </div>
     <div class="container-fluid mt-5 mb-5 text-center">
         <h1 class="display-5">Register</h1>
@@ -39,9 +39,9 @@
                 <div class="card shadow-lg mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Student Package</h5>
+                        <p class="card-text">Are you a student looking for a sleek and proffesional, optimisation and organisation tool? Well this is the package for you!</p>
+                        <a href="{{ url_for('studentcontentpackdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -49,9 +49,9 @@
                 <div class="card shadow-lg mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Teacher Package</h5>
+                        <p class="card-text">This package has all of the right tools to make any teachers day easier, get access to our renowned teachers suite now!</p>
+                        <a href="{{ url_for('teachercontentpackdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,9 @@
                 <div class="card shadow-lg mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">School Package</h5>
+                        <p class="card-text">Looking for the whole package? As a school administrator, you can now sign up your school to get the Meander Suite package!</p>
+                        <a href="{{ url_for('duluxepackdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -76,9 +76,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Personal Planner <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('personalplannerdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -86,9 +86,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">MS Weather <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('mswdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -96,9 +96,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Teacher Finder <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('teacherfinderdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -106,13 +106,14 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Student Timetable <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('studenttimetabledesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
         </div>
+        <center><a href="{{ url_for('studentprojects')}}" class="btn btn-outline-secondary">See All</a></center>
     </div>
     <div class="container-fluid mt-5 mb-5 text-center">
         <h1 class="display-5">Our Projects For Teachers</h1>
@@ -123,9 +124,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Teacher Notifications <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('teachernotificationsdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -133,9 +134,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">MS Weather <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('mswdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -143,9 +144,9 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">PB4L Points System <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('pb4lpointsysdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
@@ -153,39 +154,35 @@
                 <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
                     <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">QCAA Tracker <span class="badge bg-primary">New</span> </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ url_for('qcaatrackerdesc')}}" class="btn btn-primary">Sign Up!</a>
                     </div>
                 </div>
             </div>
         </div>
+        <center><a href="{{ url_for('teacherprojects')}}" class="btn btn-outline-secondary">See All</a></center>
     </div>
     <footer class="bg-light text-center text-lg-start">
         <div class="container p-4">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">hello</h5>
+                    <h5 class="text-uppercase">ABOUT US</h5>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                        aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                        Meander Suite was prorgammed and designed by Woodridge state high school student Lachlan Nielsen, as a compilation of ideas from the Woodridge State High School Community. The sum of ideas, shaped by teachers and students, is perfectly designed to meet the needs of the many by addressing the problems head on.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Footer text</h5>
-            
+                    <h5 class="text-uppercase">THANK YOU TO OUR STAKEHOLDERS</h5>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                        molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                        aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                        I would like to thank the main stakeholders for Meander Suite, the staff and students of Woodridge State High School. Without you the ideas and refinements for Meander Suite would not have been possible, and for that I thank you.
                     </p>
                 </div>
             </div>
         </div>
-        <div class="text-center p-3" style="background-color: rgb(17, 46, 82);">
+        <div class="text-light text-center p-3" style="background-color: rgb(17, 46, 82);">
             © 2022 Copyright:
-            <a class="text-dark" href="{{ url_for('index')}}">MEANDER SUITE</a>
+            <a class="text-light" href="{{ url_for('index')}}">MEANDER SUITE</a>
         </div>
     </footer>  
 {% endblock content %}

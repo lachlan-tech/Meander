@@ -12,8 +12,7 @@ from flask_bcrypt import Bcrypt
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.secret_key = "fc984a82b358333ca0320887c30dc407"
-
-db = mysql.connect(host = "meander.cp7w8rn9hrdf.us-west-1.rds.amazonaws.com",port="3306",user = "admin",password = "meander.1")
+db = mysql.connect(host = "meander.cp7w8rn9hrdf.us-west-1.rds.amazonaws.com", port="3306", user = "admin", password = "meander.1")
 cursor = db.cursor()
 
 # ______________________________________________________________________________________________________________________________________________________________
@@ -25,7 +24,6 @@ cursor = db.cursor()
 @app.route('/')
 def index():
     return render_template("index.html",)
-
 # ------------------------------------------------------------
 # Setting up a subpage for the teacher finder project page
 # ------------------------------------------------------------
@@ -53,9 +51,51 @@ def teachernotificationsdesc():
 # ------------------------------------------------------------
 # Setting up a subpage for the traffic light project page
 # ------------------------------------------------------------
-@app.route('/trafficlightsystem')
-def trafficlightsystemdesc():
-    return render_template("mainfiles/trafficlightsystem.html",)
+@app.route('/msw')
+def mswdesc():
+    return render_template("mainfiles/mswdesc.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the traffic light project page
+# ------------------------------------------------------------
+@app.route('/teacherprojects')
+def teacherprojects():
+    return render_template("mainfiles/teacherprojects.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/studentprojects')
+def studentprojects():
+    return render_template("mainfiles/studentprojects.html",)
+    # ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/pb4lpoints')
+def pb4lpointsysdesc():
+    return render_template("mainfiles/pb4lpointsysdesc.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/qcaatracker')
+def qcaatrackerdesc():
+    return render_template("mainfiles/qcaatrackerdesc.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/personalplanner')
+def personalplannerdesc():
+    return render_template("mainfiles/personalplannerdesc.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/studenttimetable')
+def studenttimetabledesc():
+    return render_template("mainfiles/studenttimetabledesc.html",)
+# ------------------------------------------------------------
+# Setting up a subpage for the student notification project page
+# ------------------------------------------------------------
+@app.route('/teachertimetable')
+def teachertimetabledesc():
+    return render_template("mainfiles/teachertimetabledesc.html",)
 
 
 
@@ -74,7 +114,6 @@ def studentcontentpackdesc():
 @app.route('/duluxepack')
 def duluxepackdesc():
     return render_template("mainfiles/duluxepack.html",)
-
 # ------------------------------------------------------------
 # Setting up a subpage for the login page
 # ------------------------------------------------------------ 
@@ -233,106 +272,6 @@ def TrafficLights():
         return vals 
 
 
-# ______________________________________________________________________________________________________________________________________________________________
-# The following code is for the TeacherHub extension
-# ______________________________________________________________________________________________________________________________________________________________
-# /////////
-# Setting up a root page for the TeacherHub extension
-# /////////
-
-
-@app.route('/teacherhub')
-def teacherpage():
-    if "logged_in" in session:
-        if session["lvl"] == 2:
-            return render_template("teacherpagefiles/teacherpage.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-        else:
-            return redirect(url_for('login'))
-    else:
-        return redirect(url_for('login'))
-
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Timetable change Notification extension
-# ------------------------------------------------------------
-@app.route('/teacherhub/timetablechanges')
-def teachernotifications():
-    if "logged_in" in session:
-        if session["lvl"] == 2:
-            return render_template("teacherpagefiles/teachertimetable.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-        else:
-            return redirect(url_for('login'))
-    else:
-        return redirect(url_for('login'))
-
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Planner extension
-# ------------------------------------------------------------
-@app.route('/teacherhub/planner')
-def teacherplanner():
-    if "logged_in" in session:
-        if session["lvl"] == 2:
-            return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-        else:
-            return redirect(url_for('login'))
-    else:
-        return redirect(url_for('login'))
-
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Teacher finder extension
-# ------------------------------------------------------------
-@app.route('/teacherhub/teacherfinder', methods=["GET", "POST"])
-def page1():
-    if request.method == 'POST':
-        if "logged_in" in session:
-            if session["lvl"] == 2:
-                return render_template("teacherpagefiles/answer.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4], value1=findateacher())
-            else:
-                    return redirect(url_for('login'))
-        else:
-            return redirect(url_for('login'))
-
-    else:
-        if "logged_in" in session:
-            if session["lvl"] == 2:
-                return render_template("teacherpagefiles/index.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-            else:
-                return redirect(url_for('login'))
-        else:
-            return redirect(url_for('login'))
-
-    
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Traffic light extension
-# ------------------------------------------------------------
-@app.route('/teacherhub/pb4lpointsys')
-def pb4lpointsys():
-    if request.method == 'POST':
-        if "logged_in" in session:
-            if session["lvl"] == 2:
-                return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-            else:
-                return redirect(url_for('login'))
-        else:
-            return redirect(url_for('login'))
-    else:
-        if "logged_in" in session:
-            if session["lvl"] == 2:
-                return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-# ------------------------------------------------------------
-# The following code is for the TeacherHub's Traffic light extension
-# ------------------------------------------------------------
-@app.route('/teacherhub/qcaatracker')
-def qcaatracker():
-    if "logged_in" in session:
-        if session["lvl"] == 2:
-            return render_template("teacherpagefiles/qcaatracker.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
-        else:
-            return redirect(url_for('login'))
-    else:
-        return redirect(url_for('login'))
-
-
-
 
 
 # ______________________________________________________________________________________________________________________________________________________________
@@ -401,12 +340,103 @@ def page2():
 
 
 # ______________________________________________________________________________________________________________________________________________________________
+# The following code is for the TeacherHub extension
+# ______________________________________________________________________________________________________________________________________________________________
+# /////////
+# Setting up a root page for the TeacherHub extension
+# /////////
+@app.route('/teacherhub')
+def teacherpage():
+    if "logged_in" in session:
+        if session["lvl"] == 2:
+            return render_template("teacherpagefiles/teacherpage.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+        else:
+            return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
+# ------------------------------------------------------------
+# The following code is for the TeacherHub's Timetable change Notification extension
+# ------------------------------------------------------------
+@app.route('/teacherhub/timetablechanges')
+def teachernotifications():
+    if "logged_in" in session:
+        if session["lvl"] == 2:
+            return render_template("teacherpagefiles/teachertimetable.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+        else:
+            return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
+# ------------------------------------------------------------
+# The following code is for the TeacherHub's Planner extension
+# ------------------------------------------------------------
+@app.route('/teacherhub/planner')
+def teacherplanner():
+    if "logged_in" in session:
+        if session["lvl"] == 2:
+            return render_template("teacherpagefiles/teacherplanner.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+        else:
+            return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
+# ------------------------------------------------------------
+# The following code is for the TeacherHub's Teacher finder extension
+# ------------------------------------------------------------
+@app.route('/teacherhub/teacherfinder', methods=["GET", "POST"])
+def page1():
+    if request.method == 'POST':
+        if "logged_in" in session:
+            if session["lvl"] == 2:
+                return render_template("teacherpagefiles/answer.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4], value1=findateacher())
+            else:
+                    return redirect(url_for('login'))
+        else:
+            return redirect(url_for('login'))
+
+    else:
+        if "logged_in" in session:
+            if session["lvl"] == 2:
+                return render_template("teacherpagefiles/index.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+            else:
+                return redirect(url_for('login'))
+        else:
+            return redirect(url_for('login'))   
+# ------------------------------------------------------------
+# The following code is for the TeacherHub's Traffic light extension
+# ------------------------------------------------------------
+@app.route('/teacherhub/pb4lpointsys')
+def pb4lpointsys():
+    if request.method == 'POST':
+        if "logged_in" in session:
+            if session["lvl"] == 2:
+                return render_template("teacherpagefiles/pb4lpointsys.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+            else:
+                return redirect(url_for('login'))
+        else:
+            return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
+# ------------------------------------------------------------
+# The following code is for the TeacherHub's Traffic light extension
+# ------------------------------------------------------------
+@app.route('/teacherhub/qcaatracker')
+def qcaatracker():
+    if "logged_in" in session:
+        if session["lvl"] == 2:
+            return render_template("teacherpagefiles/qcaatracker.html", val1=TrafficLights()[0], val2=TrafficLights()[1], val3=TrafficLights()[2], val4=TrafficLights()[3], val5=TrafficLights()[4])
+        else:
+            return redirect(url_for('login'))
+    else:
+        return redirect(url_for('login'))
+
+
+
+
+# ______________________________________________________________________________________________________________________________________________________________
 # The following code is for the AdminHub extension
 # ______________________________________________________________________________________________________________________________________________________________
 # /////////
 # Setting up a root page for the AdminHub extension
 # /////////
-
 @app.route('/adminpage')
 def adminpage():
     if "logged_in" in session:

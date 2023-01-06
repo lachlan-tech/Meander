@@ -1,0 +1,64 @@
+{% extends "mainfiles/mainlayout.html" %}
+{% block style %}
+    <style>
+    </style>
+{% endblock style %}
+{% block content %}
+    <div class="container-fluid mt-5 mb-5 text-center">
+        <h1 class="display-5">Our Projects For Students</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Personal Planner <span class="badge bg-primary">New</span> </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{{ url_for('studentplannerdesc')}}" class="btn btn-primary">Sign Up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">MS Weather <span class="badge bg-primary">New</span> </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{{ url_for('mswdesc')}}" class="btn btn-primary">Sign Up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Teacher Finder <span class="badge bg-primary">New</span> </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{{ url_for('teacherfinderdesc')}}" class="btn btn-primary">Sign Up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Timetable <span class="badge bg-primary">New</span> </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{{ url_for('studenttimetabledesc')}}" class="btn btn-primary">Sign Up!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow mb-5 mx-auto bg-body rounded" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='mainfiles/news_slider_1.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Notifications <span class="badge bg-primary">New</span> </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="{{ url_for('studentnotificationsdesc')}}" class="btn btn-primary">Sign Up!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
