@@ -1,39 +1,62 @@
-<!DOCTYPE html>
-<html>
-    <html>
-	<head>
-		<title>Meander Suite</title>
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <title>Meander Suite</title>
         {% block style %}{% endblock %}
         <link rel="icon" href="{{ url_for('static', filename='mainfiles/sitelogo.png')}}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/85e648c8d7.js" crossorigin="anonymous"></script>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
+        <style>
+            .navcolor{
+                background: rgb(17, 46, 82)
             }
-            function alertweather()
+        </style>
+        <script>
+             function alertweather()
             {
                 alert("Average Tempurature: {{val1}}°C \n Average Humidity: {{val2}}% \n Cloud Coverage: {{val3}}% \n Moon Cycle: {{val4}}%");
             }
         </script>
-	</head>
-	<body>
-        <div class="topnav" id="myTopnav">
-            <a href="#"><img id="logo", src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}"></a>
-            <a href="{{ url_for('studentnotifications')}}">Your Timetable</a>
-            <a href="{{ url_for('studentplanner')}}">Student Planner</a>
-            <a href="{{ url_for('page2')}}">Teacher Finder</a>
-            <a href="{{ url_for('studentpage')}}", style="float: right;">StudentHub</a>
-            <span style="float: right;", onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark navcolor">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ url_for('studentpage')}}">
+                    <img src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}" width="30">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('studentnotifications')}}">Your Timetable</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('studentplanner')}}">Student Planner</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('page2')}}">Teacher Finder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('studentpage')}}">StudentHub</a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="navbar-brand">
+                    <span onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
+                </a>
+            </div>
+        </nav>
         <section class="content">
             {% block content %}{% endblock content%}
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
