@@ -16,6 +16,12 @@
             .navcolor{
                 background: rgb(17, 46, 82)
             }
+            #trafficimg{
+                width: auto;
+                height: 40px;
+                padding: 5px;
+                float: right;
+            }
         </style>
         <script>
              function alertweather()
@@ -30,9 +36,6 @@
                 <a class="navbar-brand" href="{{ url_for('studentpage')}}">
                     <img src="{{ url_for('static', filename='mainfiles/sitelogo.png')}}" width="30">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -44,14 +47,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('page2')}}">Teacher Finder</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('studentpage')}}">StudentHub</a>
-                        </li>
                     </ul>
                 </div>
-                <a class="navbar-brand">
-                    <span onclick="alertweather()", class="tooltip"><img id="trafficimg" src={{val5}}></span>
-                </a>
+                <span onclick="alertweather()", class="image">
+                    <img id="trafficimg" src={{val5}}>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
         <section class="content">
